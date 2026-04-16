@@ -3,7 +3,7 @@ const { useState, useEffect, useRef, useCallback, useMemo } = React;
 /* ─── helpers ──────────────────────────────────────────────────────────── */
 
 function parseField(text, field) {
-  const m = (text || '').match(new RegExp(field + ':\\s*([\\s\\S]+?)(?=\\n[A-Z_]+:|$)'));
+  const m = (text || '').match(new RegExp(field + ':\\s*([\\s\\S]+?)(?=\\n[A-Z_0-9]+:|$)'));
   return m ? m[1].trim() : '';
 }
 function parseFindings(text) {

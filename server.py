@@ -136,7 +136,7 @@ async def call_openai(system_prompt: str, user_message: str, max_tokens: int = 8
 # ---------------------------------------------------------------------------
 
 def parse_field(text: str, field: str) -> str:
-    m = re.search(rf"{field}:\s*([\s\S]+?)(?=\n[A-Z_]+:|$)", text)
+    m = re.search(rf"{field}:\s*([\s\S]+?)(?=\n[A-Z_0-9]+:|$)", text)
     return m.group(1).strip() if m else ""
 
 # ---------------------------------------------------------------------------
